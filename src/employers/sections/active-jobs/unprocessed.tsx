@@ -1,12 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
 import { Container, Table, Row, Col } from "reactstrap";
 import "../../employers.styles.css";
-
 type UnProcessedProps = {
   // tabs: new (props: any) => React.Component
 };
 const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
-  const [unprocessedJobs, setunProcessedJobs] = useState([
+  const [unprocessedJobs] = useState([
     {
       id: 1,
       name: "Job # 1",
@@ -17,7 +16,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
       status: "Rejected"
     },
     {
-      id: 1,
+      id: 2,
       name: "Job # 1",
       resume: "Preivew",
       nationality: "xxxxxxxxxxxxx",
@@ -26,7 +25,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
       status: "Rejected"
     },
     {
-      id: 1,
+      id: 3,
       name: "Job # 1",
       resume: "Preivew",
       nationality: "xxxxxxxxxxxxx",
@@ -35,7 +34,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
       status: "Rejected"
     },
     {
-      id: 1,
+      id: 4,
       name: "Job # 1",
       resume: "Preivew",
       nationality: "xxxxxxxxxxxxx",
@@ -44,7 +43,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
       status: "Rejected"
     },
     {
-      id: 1,
+      id: 5,
       name: "Job # 1",
       resume: "Preivew",
       nationality: "xxxxxxxxxxxxx",
@@ -75,14 +74,19 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
               {unprocessedJobs.map((job, i) => {
                 return (
                   <tr key={i}>
-                    <td>o</td>
-                    <td>{job.id}</td>
-                    <td>{job.name}</td>
-                    <td>{job.resume}</td>
-                    <td>{job.nationality}</td>
-                    <td>{job.dateApplied}</td>
-                    <td>{job.action}</td>
-                    <td>{job.status}</td>
+                    <td className="py-4 ">
+                      <input type="radio"/>
+                    </td>
+                    <td className="py-4 ">{job.id}</td>
+                    <td className="py-4"> {job.name}</td>
+                    <td className="py-4 ">
+                      <i className="fa fa-eye"></i>
+                      {`  ${job.resume}`}
+                    </td>
+                    <td className="py-4 ">{job.nationality}</td>
+                    <td className="py-4 ">{job.dateApplied}</td>
+                    <td className="py-4 ">{job.action}</td>
+                    <td className="py-4 ">{job.status}</td>
                   </tr>
                 );
               })}
