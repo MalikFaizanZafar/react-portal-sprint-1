@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
 import { Container, Table, Row, Col } from "reactstrap";
 import "../../employers.styles.css";
-type ShortListedProps = {
+type ActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
+  jobSelect: (id : number) => void
 };
-const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
+const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({jobSelect, children }) => {
   const [unprocessedJobs] = useState([
     {
       id: 1,
@@ -32,8 +33,30 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
       dateApplied: "01-01-2001",
       action: "SHORTLIST",
       status: "Rejected"
+    },
+    {
+      id: 4,
+      name: "Job # 1",
+      resume: "Preivew",
+      nationality: "xxxxxxxxxxxxx",
+      dateApplied: "01-01-2001",
+      action: "SHORTLIST",
+      status: "Rejected"
+    },
+    {
+      id: 5,
+      name: "Job # 1",
+      resume: "Preivew",
+      nationality: "xxxxxxxxxxxxx",
+      dateApplied: "01-01-2001",
+      action: "SHORTLIST",
+      status: "Rejected"
     }
   ]);
+
+  const jobClickHandler = (job: any) => {
+    jobSelect(job.id)
+  }
   return (
     <Container className="p-0">
       {children}
@@ -55,9 +78,9 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
             <tbody>
               {unprocessedJobs.map((job, i) => {
                 return (
-                  <tr key={i}>
+                  <tr key={i} onClick={(job) => jobClickHandler(job)}>
                     <td className="py-4 ">
-                      <input type="radio" />
+                      <input type="radio"/>
                     </td>
                     <td className="py-4 ">{job.id}</td>
                     <td className="py-4"> {job.name}</td>
@@ -80,4 +103,4 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
   );
 };
 
-export default ShortListed;
+export default ActiveJobsSubSection;

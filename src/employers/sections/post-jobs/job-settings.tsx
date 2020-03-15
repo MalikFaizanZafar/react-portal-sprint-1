@@ -6,14 +6,14 @@ type JobSettingProps = {
 }
 const JobSettings:FunctionComponent<JobSettingProps> = ({children}) => {
     return (
-        <Container>
-            <Row className="bg-primary">
-                Check 42342343
-            </Row>
+        <div>
+            <div className="field-marked">
+                <p>Field marked with asterisk(*) are madatory</p>
+            </div>
             {children}
-            <Form className="mt-5">
+            <Form className="job-form">
                 <Row>
-                    <Col md={{ size: '9', offset: '2' }} className="text-left"  >
+                    <Col md={{ size: '12'}} className="text-left"  >
                         <Row>
                             <Col md="6" sm="12">
 
@@ -94,7 +94,7 @@ const JobSettings:FunctionComponent<JobSettingProps> = ({children}) => {
 
             </Form>
 
-        </Container>
+        </div>
 
     );
 }

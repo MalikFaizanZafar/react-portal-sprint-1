@@ -1,57 +1,57 @@
-import React, { useState } from 'react';
-import TabsNavigator from '../../tabs-navigator';
-import { Row, Col, Button } from 'reactstrap';
-import UnProcessed from './unprocessed';
-import ShortListed from './shortlisted';
-import Rejected from './rejected';
+import React, { useState } from "react";
+import TabsNavigator from "../../tabs-navigator";
+import ActiveJobsSubSection from "./active-jobs-subsection";
+import InActiveJobsSubSection from "./in-active-jobs-subsection";
+import ActiveJobsTwo from "./index-two";
 
-const ACTIVE_JOBS_TABS = [
-    'Unprocessed',
-    'Shortlisted',
-    'Rejected']
+
+const ACTIVE_JOBS_TABS = ["Active Jobs", "Inactive Jobs"];
 const ActiveJobs = () => {
-    const [selectedTab, setSelectedTab] = useState(0);
+  const [jobSelected, setJobSelected] = useState(false);
+  const [selectedTab, setSelectedTab] = useState(0);
 
-    const switchTabHandler = (index: number) => {
-        setSelectedTab(index);
-    }
-    return (
-        <React.Fragment>
-            <div className="container">
-                <div className="post-jobs-inner-div">
-                    {selectedTab === 0 &&
-                        <UnProcessed>
-                            <TabsNavigator
-                                onTabSwitch={(index) => switchTabHandler(index)}
-                                tabs={ACTIVE_JOBS_TABS}
-                                currentTab={selectedTab}
-                            />
-                        </UnProcessed>}
-                    {selectedTab === 1 &&
-                        <ShortListed>
-                            <TabsNavigator
-                                onTabSwitch={(index) => switchTabHandler(index)}
-                                tabs={ACTIVE_JOBS_TABS}
-                                currentTab={selectedTab}
-                            />
-                        </ShortListed>}
-                    {selectedTab === 2 &&
-                        <Rejected>
-                            <TabsNavigator
-                                onTabSwitch={(index) => switchTabHandler(index)}
-                                tabs={ACTIVE_JOBS_TABS}
-                                currentTab={selectedTab}
-                            />
-                        </Rejected>}
-                </div>
+  const switchTabHandler = (index: number) => {
+    setSelectedTab(index);
+  };
 
+  const jobSelectHandler = (id : number) => {
+    console.log("id ", id);
+    setJobSelected(true);
+  }
+  return (
+    <React.Fragment>
+      <div className="container">
+        <div className="post-jobs-inner-div">
+          {jobSelected === false && selectedTab === 0 && (
+            <ActiveJobsSubSection jobSelect={(id) => jobSelectHandler(id)}>
+              <TabsNavigator
+                onTabSwitch={index => switchTabHandler(index)}
+                tabs={ACTIVE_JOBS_TABS}
+                currentTab={selectedTab}
+              />
+            </ActiveJobsSubSection>
+          )}
 
-
-                {/* {selectedTab === 1 && <JobLocation />}
+          {jobSelected === false && selectedTab === 1 && (
+            <InActiveJobsSubSection>
+              <TabsNavigator
+                onTabSwitch={index => switchTabHandler(index)}
+                tabs={ACTIVE_JOBS_TABS}
+                currentTab={selectedTab}
+              />
+            </InActiveJobsSubSection>
+          )}
+        </div>
+        {
+            jobSelected === true && (
+                <ActiveJobsTwo />
+            )
+        }
+        {/* {selectedTab === 1 && <JobLocation />}
                 {selectedTab === 2 && <SalaryDetails />}
                 {selectedTab === 3 && <JobSettings />} */}
-                {/* <JobDetails /> */}
-                {/* <Row>
+        {/* <JobDetails /> */}
+        {/* <Row>
                     <Col md="6" sm="12" xs="12" >
                         <span className="text-danger">Error</span>
                     </Col>
@@ -62,9 +62,9 @@ const ActiveJobs = () => {
                         </div>
                     </Col>
                 </Row> */}
-            </div>
-        </React.Fragment>
-    );
-}
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default ActiveJobs;

@@ -7,11 +7,11 @@ type JobDetailsProps = {
 }
 const JobDetails: FunctionComponent<JobDetailsProps> = ({children}) => {
     return (
-        <Container>
+        <div className="">
             {children}
-            <Form className="mt-5">
+            <Form  className="job-form">
                 <Row>
-                    <Col md={{ size: '9', offset: '2' }} className="text-left"  >
+                    <Col md={{ size: '12',}} className="text-left"  >
                         <Row>
                             <Col>
                                 <FormGroup>
@@ -99,7 +99,7 @@ const JobDetails: FunctionComponent<JobDetailsProps> = ({children}) => {
          
             </Form>
 
-        </Container>
+        </div>
 
     );
 }

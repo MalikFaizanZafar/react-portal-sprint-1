@@ -8,11 +8,12 @@ type JobLocationProps = {
 
 const JobLocation: FunctionComponent<JobLocationProps> = ({children}) => {
     return (
-        <Container>
-            <Form className="mt-5">
-                {children}
+        <div>
+            {children}
+            <Form className="job-form">
+                
                 <Row>
-                    <Col md={{ size: '9', offset: '2' }} className="text-left"  >
+                    <Col md={{ size: '12' }} className="text-left"  >
                         <Row>
                             <Col md="6" sm="12">
                                 <FormGroup>
@@ -64,7 +65,7 @@ const JobLocation: FunctionComponent<JobLocationProps> = ({children}) => {
 
             </Form>
 
-        </Container>
+        </div>
 
     );
 }

@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from "react";
 import { Container, Table, Row, Col } from "reactstrap";
 import "../../employers.styles.css";
-type ShortListedProps = {
+type InActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
 };
-const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
+const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = ({ children }) => {
   const [unprocessedJobs] = useState([
     {
       id: 1,
@@ -26,6 +26,15 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
     },
     {
       id: 3,
+      name: "Job # 1",
+      resume: "Preivew",
+      nationality: "xxxxxxxxxxxxx",
+      dateApplied: "01-01-2001",
+      action: "SHORTLIST",
+      status: "Rejected"
+    },
+    {
+      id: 4,
       name: "Job # 1",
       resume: "Preivew",
       nationality: "xxxxxxxxxxxxx",
@@ -57,7 +66,7 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
                 return (
                   <tr key={i}>
                     <td className="py-4 ">
-                      <input type="radio" />
+                      <input type="radio"/>
                     </td>
                     <td className="py-4 ">{job.id}</td>
                     <td className="py-4"> {job.name}</td>
@@ -80,4 +89,4 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
   );
 };
 
-export default ShortListed;
+export default InActiveJobsSubSection;
