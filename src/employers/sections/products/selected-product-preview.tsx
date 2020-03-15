@@ -44,12 +44,12 @@ const SelectedProductPreview: FunctionComponent<SelectedProductPreviewProps> = (
                     </td>
                     <td className="py-4"> {prod.id}</td>
                     <td className="py-4"> {prod.productTitle}</td>
+                    <td className="py-4 ">{prod.postedDate}</td>
+                    <td className="py-4 ">{prod.expiryDate}</td>
                     <td className="py-4 ">
                       <i className="fa fa-eye"></i>
                       {` View`}
                     </td>
-                    <td className="py-4 ">{prod.postedDate}</td>
-                    <td className="py-4 ">{prod.expiryDate}</td>
                   </tr>
                 );
               })}
