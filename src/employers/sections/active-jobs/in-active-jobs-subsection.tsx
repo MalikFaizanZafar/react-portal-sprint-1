@@ -46,45 +46,70 @@ const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = (
   return (
     <Container className="p-0">
       {children}
-      <Row className="px-5">
-        <Col md="12" xs="12" sm="12">
-          <Table hover className="mt-5 active-job-unprocessed-table">
-            <thead className="active-job-unprocessed-table-thead mt-3 py-2">
+      <div className="" style={{ width: '100%',overflow: 'auto'}}>
+           <table id="dtHorizontalExample" className="table table-striped table-bordered table-sm"
+           style={{width:'100%'}} >
+            <thead>
               <tr>
-                <th className="py-4">O</th>
-                <th className="py-4">#</th>
-                <th className="py-4">Name</th>
-                <th className="py-4">Resume</th>
-                <th className="py-4">Nationality</th>
-                <th className="py-4">Date Applied</th>
-                <th className="py-4">Action</th>
-                <th className="py-4"></th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Extn.</th>
+                <th>E-mail</th>
               </tr>
             </thead>
             <tbody>
-              {unprocessedJobs.map((job, i) => {
-                return (
-                  <tr key={i}>
-                    <td className="py-4 ">
-                      <input type="radio"/>
-                    </td>
-                    <td className="py-4 ">{job.id}</td>
-                    <td className="py-4"> {job.name}</td>
-                    <td className="py-4 ">
-                      <i className="fa fa-eye"></i>
-                      {`  ${job.resume}`}
-                    </td>
-                    <td className="py-4 ">{job.nationality}</td>
-                    <td className="py-4 ">{job.dateApplied}</td>
-                    <td className="py-4 ">{job.action}</td>
-                    <td className="py-4 ">{job.status}</td>
-                  </tr>
-                );
-              })}
+              <tr>
+                <td>Tiger</td>
+                <td>Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td>5421</td>
+                <td>t.nixon@datatables.net</td>
+              </tr>
+              <tr>
+                <td>Garrett</td>
+                <td>Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+                <td>8422</td>
+                <td>g.winters@datatables.net</td>
+              </tr>
+              <tr>
+                <td>Ashton</td>
+                <td>Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+                <td>1562</td>
+                <td>a.cox@datatables.net</td>
+              </tr>
+              <tr>
+                <td>Cedric</td>
+                <td>Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+                <td>6224</td>
+                <td>c.kelly@datatables.net</td>
+              </tr>
             </tbody>
-          </Table>
-        </Col>
-      </Row>
+          </table>
+      </div>
     </Container>
   );
 };
