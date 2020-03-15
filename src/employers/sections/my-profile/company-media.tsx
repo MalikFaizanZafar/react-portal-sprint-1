@@ -53,7 +53,7 @@ const CompanyMedia: FunctionComponent<CompanyMediaProp> = ({ children }) => {
                                         <i className="fa fa-upload upload-icon"></i>
                                     </Col>
                                 </Row>
-                                <span style={{background:'#f0f0f0',color:'black'}} >Choose File </span>
+                                Choose File
                             </div>
                         </Col>
                     </Row>

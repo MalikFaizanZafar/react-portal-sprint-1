@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabsNavigator from "../../tabs-navigator";
+import TabsNavigator from "../../components/tabs-navigator";
 import UnProcessed from "./unprocessed";
 import ShortListed from "./shortlisted";
 import Rejected from "./rejected";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabsNavigator from "../../tabs-navigator";
+import TabsNavigator from "../../components/tabs-navigator";
 import CurrentProducts from "./current-products";
 import ExpiredProducts from "./expired-products";
 import SelectedProductPreview from "./selected-product-preview";

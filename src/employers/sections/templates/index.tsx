@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabsNavigator from "../../tabs-navigator";
+import TabsNavigator from "../../components/tabs-navigator";
 import ExistingTemplates from "./existing-templates";
 import CreateNewTemplate from "./create-new-template";
 
@@ -13,7 +13,7 @@ const Templates = () => {
     setSelectedTab(index);
   };
 
-  const templateSelectHandler = (id : number) => {
+  const templateSelectHandler = (id: number) => {
     console.log("id ", id);
     setTemplateSelected(true);
   }
@@ -22,7 +22,7 @@ const Templates = () => {
       <div className="container">
         <div className="post-jobs-inner-div">
           {templateSelected === false && selectedTab === 0 && (
-            <ExistingTemplates templateSelect={index => templateSelectHandler(index)}>
+            <ExistingTemplates >
               <TabsNavigator
                 onTabSwitch={index => switchTabHandler(index)}
                 tabs={ACTIVE_JOBS_TABS}
@@ -33,12 +33,12 @@ const Templates = () => {
 
           {templateSelected === false && selectedTab === 1 && (
             <CreateNewTemplate>
-     <TabsNavigator
+              <TabsNavigator
                 onTabSwitch={index => switchTabHandler(index)}
                 tabs={ACTIVE_JOBS_TABS}
                 currentTab={selectedTab}
-              />     
-              </CreateNewTemplate>         
+              />
+            </CreateNewTemplate>
           )}
         </div>
       </div>

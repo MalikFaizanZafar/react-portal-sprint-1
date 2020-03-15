@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EmployerHeader from './header';
+import EmployerHeader from './components/header';
 import PostJobs from './sections/post-jobs';
 import ActiveJobs from './sections/active-jobs';
 import MyProfile from './sections/my-profile';

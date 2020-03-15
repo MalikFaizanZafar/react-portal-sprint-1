@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TabsNavigator from '../../tabs-navigator';
+import TabsNavigator from '../../components/tabs-navigator';
 import ContactInfo from './contact-info';
 import CompanyInfo from './company-info';
 import CompanyMedia from './company-media';

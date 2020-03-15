@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TabsNavigator from '../../tabs-navigator';
+import TabsNavigator from '../../components/tabs-navigator';
 import JobDetails from './job-details';
 import JobLocation from './job-location';
 import SalaryDetails from './salary-details';
