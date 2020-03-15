@@ -10,7 +10,7 @@ const ACTIVE_JOBS_TABS = [
     'Rejected'];
 
 // const ACTIVE_JOBS_TABS = ["Active Jobs", "Inactive Jobs"];
-const ActiveJobsTwo = () => {
+const SelectedJobPreview = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const switchTabHandler = (index: number) => {
@@ -70,4 +70,4 @@ const ActiveJobsTwo = () => {
   );
 };
 
-export default ActiveJobsTwo;
+export default SelectedJobPreview;
