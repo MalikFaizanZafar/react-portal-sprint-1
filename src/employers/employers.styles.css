@@ -14,7 +14,7 @@
 }
 
 .job-form {
-    padding: 45px 91px;;
+    padding: 45px 91px;
 }
 .post-jobs-inner-div span {
     color: #04b3fd;
@@ -101,4 +101,32 @@
         position: absolute;
         top: -35px;
     }
+}
+.upload{
+    background: #f0f0f0;
+    width: 50%;
+    height: 120px;
+    border-radius: 5px;
+}
+.upload-icon{
+    font-size: 60px;
+    padding: 5px;
+    color: #04b3fd;
+}
+.upload-div{
+    cursor: pointer;
+}
+.image-des{
+    max-width: 210px;
+    color: black !important;
+    font-weight: 100 !important;
+}
+.button-gradient{
+    background-image: linear-gradient(to right, #05b3fd , #67f3f1);
+    border: none;
+}
+.button-no-bg{
+    background: none;
+    color:#05b3fd ;
+    border: none;
 }

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import { Container } from 'reactstrap';
+type CreateNewTemplateProp={
 
-const CreateNewTemplate = () => {
+}
+const CreateNewTemplate:FunctionComponent<CreateNewTemplateProp> = ({children}) => {
   return(
-    <h2>
-      Create New Template
-    </h2>
+ <Container>
+   {children}
+ </Container>
   )
 }
 

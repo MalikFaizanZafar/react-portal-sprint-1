@@ -16,7 +16,7 @@ const EmployerHeader = ({headers, headerChange}:EmployerHeaderProps) => {
             <div className="container pt-4 d-flex justify-content-start">
                 <h1>Post Job</h1>
             </div>
-            <div className="emplye-header bg-primary">
+            <div className="emplye-header " style={{background:'#32a8e0'}}>
                 <div className="container">
                     {
                         headers.map((head, i) => {

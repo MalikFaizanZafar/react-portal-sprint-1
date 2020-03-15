@@ -4,6 +4,7 @@ import ContactInfo from './contact-info';
 import CompanyInfo from './company-info';
 import CompanyMedia from './company-media';
 import Password from './password';
+import { Row, Col, Button } from 'reactstrap';
 const MY_PROFILE_TABS = [
     'Contact info',
     'Company info',
@@ -18,7 +19,7 @@ const MyProfile = () => {
     }
     return(
         <React.Fragment>
-        <div className="container">
+        <div className="container p-0">
             <div className="post-jobs-inner-div">
                 {selectedTab === 0 &&
                     <ContactInfo>
@@ -53,7 +54,12 @@ const MyProfile = () => {
                         />
                     </Password>}
             </div>
-    
+  <Row className="mt-5 mb-3">
+      <Col md={{size:11 }} sm='11' className="text-right">
+          <Button className="button-no-bg">CANCEL</Button>
+          <Button className="button-gradient">SAVE & PREVIEW</Button>
+      </Col>
+  </Row>
     
     
             {/* {selectedTab === 1 && <JobLocation />}

@@ -32,8 +32,13 @@ const Templates = () => {
           )}
 
           {templateSelected === false && selectedTab === 1 && (
-            <CreateNewTemplate />
-              
+            <CreateNewTemplate>
+     <TabsNavigator
+                onTabSwitch={index => switchTabHandler(index)}
+                tabs={ACTIVE_JOBS_TABS}
+                currentTab={selectedTab}
+              />     
+              </CreateNewTemplate>         
           )}
         </div>
       </div>
