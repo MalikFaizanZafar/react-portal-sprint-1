@@ -55,9 +55,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
   return (
     <Container className="p-0">
       {children}
-      <Row className="px-5">
-        <Col md="12" xs="12" sm="12">
-          <Table hover className="mt-5 active-job-unprocessed-table">
+      <Table hover className="mt-5 active-job-unprocessed-table">
             <thead className="active-job-unprocessed-table-thead mt-3 py-2">
               <tr>
                 <th className="py-4">O</th>
@@ -92,8 +90,6 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
               })}
             </tbody>
           </Table>
-        </Col>
-      </Row>
     </Container>
   );
 };
