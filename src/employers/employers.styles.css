@@ -79,3 +79,11 @@ padding:12px 70px ;
         font-size: 12px;
     }
 }
+
+.active-job-unprocessed-table-thead {
+    border-bottom: 4px solid #04b3fd;
+}
+
+/* .active-job-unprocessed-table {
+    padding-left: 20%;
+} */
