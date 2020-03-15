@@ -15,11 +15,11 @@ const TabsNavigator = ({tabs,currentTab, onTabSwitch}: TabsProps) => {
     }
     return (
         <React.Fragment>
-            <div className="container mt-3 py-2">
+            <div className="d-flex p-0 justify-content-center w-100">
                 {
                     tabs.map((tab, i) => {
                         return(
-                            <span key={i} onClick={(event) => headerClickHanlder(i)} style={{cursor: "pointer"}} className={selectedTab !== i ?` non-active-tab`: 'active-tab text-primary  '}>{tab}</span>
+                            <span key={i} onClick={(event) => headerClickHanlder(i)} style={{cursor: "pointer", width: `${tabs.length === 2? '50%': tabs.length === 3? '33.33%': tabs.length === 4? '25%': '100%'}`}} className={selectedTab !== i ?` non-active-tab`: 'active-tab text-primary  '}>{tab}</span>
                         );
                     })
                 }

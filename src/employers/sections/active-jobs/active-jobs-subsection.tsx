@@ -3,8 +3,9 @@ import { Container, Table, Row, Col } from "reactstrap";
 import "../../employers.styles.css";
 type ActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
+  jobSelect: (id : number) => void
 };
-const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({ children }) => {
+const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({jobSelect, children }) => {
   const [unprocessedJobs] = useState([
     {
       id: 1,
@@ -52,8 +53,12 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({ ch
       status: "Rejected"
     }
   ]);
+
+  const jobClickHandler = (job: any) => {
+    jobSelect(job.id)
+  }
   return (
-    <Container>
+    <Container className="p-0">
       {children}
       <Row className="px-5">
         <Col md="12" xs="12" sm="12">
@@ -73,7 +78,7 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({ ch
             <tbody>
               {unprocessedJobs.map((job, i) => {
                 return (
-                  <tr key={i}>
+                  <tr key={i} onClick={(job) => jobClickHandler(job)}>
                     <td className="py-4 ">
                       <input type="radio"/>
                     </td>

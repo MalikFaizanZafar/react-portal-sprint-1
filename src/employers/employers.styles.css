@@ -7,21 +7,25 @@
 
 .post-jobs-inner-div {
     background: #fff;
-    margin-top: -60px;
-    border: 1px solid #000;
+    margin-top: -45px;
+    border: 1px solid #eee;
+    text-align: left;
+    position: relative;
 }
 
-
-.active-tab {
-    
+.job-form {
+    padding: 45px 91px;;
+}
+.post-jobs-inner-div span {
     color: #04b3fd;
     background-color: white;
-font-weight: 700;
-    box-shadow:
-     
-      0 9px 0 #04b3fd inset;
-padding:12px 70px ;
+    font-weight: 700;
+    text-align: center;
+    padding:15px 0px ;
 
+}
+.post-jobs-inner-div .active-tab {
+    box-shadow: 0 9px 0 #04b3fd inset;
 }
 
 .non-active-tab {
@@ -54,7 +58,10 @@ padding:12px 70px ;
     padding: 10px 35px;
     font-weight: 600;
 }
-
+.field-marked {
+    position: absolute;
+    top: -60px;
+}
 
 
 
@@ -65,7 +72,7 @@ padding:12px 70px ;
         font-size: 15px;
     }
     .post-jobs-inner-div span {
-        padding: 12px 30px;
+        padding: 12px 70px;
         font-size: 15px;
     }
 }
@@ -75,15 +82,23 @@ padding:12px 70px ;
         font-size: 12px;
     }
     .post-jobs-inner-div span {
-        padding: 12px 18px;
+        padding: 12px 50px;
         font-size: 12px;
     }
+    .field-marked {
+        position: absolute;
+        top: -47px;
+    }
+    
 }
-
-.active-job-unprocessed-table-thead {
-    border-bottom: 4px solid #04b3fd;
+@media screen and (max-width: 767px) {
+    .post-jobs-inner-div span {
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .field-marked {
+        position: absolute;
+        top: -35px;
+    }
 }
-
-/* .active-job-unprocessed-table {
-    padding-left: 20%;
-} */

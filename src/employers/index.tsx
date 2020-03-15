@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EmployerHeader from './header';
-import PostJobsSection from './sections/post-jobs';
+import PostJobs from './sections/post-jobs';
 import ActiveJobs from './sections/active-jobs';
 import MyProfile from './sections/my-profile';
 import Products from './sections/products';
@@ -31,7 +31,7 @@ const Employer = () => {
                     <div className="container-fluid post-jobs-inner-container">
                         <div className="row">
                             <div className="col-md-12">
-                                {selectedHeader === 0 && <PostJobsSection />}
+                                {selectedHeader === 0 && <PostJobs />}
                                 {selectedHeader === 1    && <ActiveJobs />}
                                 {selectedHeader === 2    && <MyProfile />}
                                 {selectedHeader === 3    && <Products />}

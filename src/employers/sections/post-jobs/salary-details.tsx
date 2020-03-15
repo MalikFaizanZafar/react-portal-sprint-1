@@ -6,14 +6,14 @@ type SalaryDetailProps = {
 }
 const SalaryDetails: FunctionComponent<SalaryDetailProps> = ({children}) => {
     return (
-        <Container>
-            <Row>
-                Check 222222222222222
-            </Row>
+        <div>
+           <div className="field-marked">
+                <p>Field marked with asterisk(*) are madatory</p>
+            </div>
             {children}
-            <Form className="mt-5">
+            <Form className="job-form">
                 <Row>
-                    <Col md={{ size: '9', offset: '2' }} className="text-left"  >
+                    <Col md={{ size: '12'}} className="text-left"  >
                         <Row>
                             <Col >
                                 <FormGroup>
@@ -84,7 +84,7 @@ const SalaryDetails: FunctionComponent<SalaryDetailProps> = ({children}) => {
 
             </Form>
 
-        </Container>
+        </div>
 
     );
 }

@@ -44,7 +44,7 @@ const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = (
     }
   ]);
   return (
-    <Container>
+    <Container className="p-0">
       {children}
       <Row className="px-5">
         <Col md="12" xs="12" sm="12">
