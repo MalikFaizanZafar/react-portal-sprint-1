@@ -38,34 +38,32 @@ const ExistingSubUsers:FunctionComponent<ExistingSubUsersProps> = ({children}) =
     return(
        <div>
            {children}
-           <Row className="">
-        <Col md="12" xs="12" sm="12">
-          <Table hover className="mt-5 active-job-unprocessed-table">
-            <thead className="active-job-unprocessed-table-thead bg-primary text-white mt-3 py-2">
-              <tr>
-                <th className="">User Name</th>
-                <th className="">Email</th>
-                <th className="">Actions</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              {existingSubUsers.map((user, i) => {
-                return (
-                  <tr key={i}>
-                    <td className="">{user.username}</td>
-                    <td className="">{user.email}</td>
-                    <td className="">
-                      <Button onClick={() => editClickHandler(user.id)} color="link">Edit</Button>
-                      <Button onClick={() => setDeleteModal(true)} color="link">Delete</Button>
-                    </td>
+            <div style={{ width: "100%", overflow: "auto" }}>
+              <Table hover className="mt-5 active-job-unprocessed-table">
+                <thead className="active-job-unprocessed-table-thead bg-primary text-white mt-3 py-2">
+                  <tr>
+                    <th className="">User Name</th>
+                    <th className="">Email</th>
+                    <th className="">Actions</th>
+                    
                   </tr>
-                );
-              })}
-            </tbody>
-          </Table>
-        </Col>
-      </Row>
+                </thead>
+                <tbody>
+                  {existingSubUsers.map((user, i) => {
+                    return (
+                      <tr key={i}>
+                        <td className="">{user.username}</td>
+                        <td className="">{user.email}</td>
+                        <td className="">
+                          <Button onClick={() => editClickHandler(user.id)} color="link">Edit</Button>
+                          <Button onClick={() => setDeleteModal(true)} color="link">Delete</Button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            </div>
       <Row >
         <Modal className="modal-lg custom-modal" style={{ width: 'width: 90vw' }} isOpen={modal} toggle={toggle} centered >
           {/* <EditTemplateModal template={null} /> */}
