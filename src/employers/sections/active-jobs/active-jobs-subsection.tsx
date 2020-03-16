@@ -1,11 +1,23 @@
 import React, { FunctionComponent, useState } from "react";
-import { Container, Table, Row, Col } from "reactstrap";
+import {
+  Container,
+  Alert,
+  Row,
+  Col,
+  InputGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText
+} from "reactstrap";
 import "../../employers.styles.css";
 type ActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
-  jobSelect: (id : number) => void
+  jobSelect: (id: number) => void;
 };
-const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({jobSelect, children }) => {
+const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
+  jobSelect,
+  children
+}) => {
   const [unprocessedJobs] = useState([
     {
       id: 1,
@@ -53,76 +65,88 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({job
       status: "Rejected"
     }
   ]);
-
   const jobClickHandler = (job: any) => {
-    jobSelect(job.id)
-  }
+    jobSelect(job.id);
+  };
   return (
     <Container className="p-0">
       {children}
-      <div className="" style={{ width: '100%',overflow: 'auto'}}>
-           <table className="table table-striped table-bordered table-sm"
-           style={{width:'100%'}} >
-            <thead>
-              <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-                <th>Extn.</th>
-                <th>E-mail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Tiger</td>
-                <td>Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-                <td>5421</td>
-                <td>t.nixon@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Garrett</td>
-                <td>Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-                <td>8422</td>
-                <td>g.winters@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Ashton</td>
-                <td>Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-                <td>1562</td>
-                <td>a.cox@datatables.net</td>
-              </tr>
-              <tr>
-                <td>Cedric</td>
-                <td>Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-                <td>6224</td>
-                <td>c.kelly@datatables.net</td>
-              </tr>
-            </tbody>
-          </table>
+      <div className="" style={{ width: "100%", overflow: "auto" }}>
+        <Row className="p-2 mt-5">
+          <Col md="7" sm="6" xs="12" className="align-items-center">
+            <InputGroup className="p-1">
+              <Input placeholder="Jobs, Departments etc" />
+              <InputGroupAddon addonType="append">
+                <InputGroupText
+                  style={{ width: "100px", height: "38px" }}
+                  className="bg-primary text-white pl-4"
+                >
+                  Search
+                </InputGroupText>
+              </InputGroupAddon>
+            </InputGroup>
+          </Col>
+          <Col md="5" sm="6" xs="12">
+            <p className="font-weight-bold text-secondary">
+              Enter Keywords such as Job Title or Department/Function to find
+              Specific Job Postings
+            </p>
+          </Col>
+        </Row>
+        <Row className="my-2 px-3">
+          <Col md="6" sm="6" xs="12">
+            <h6 className="font-weight-bold">No of Jobs Posted (40/80)</h6>
+          </Col>
+          <Col
+            md="6"
+            sm="6"
+            xs="12"
+            className="d-flex justify-content-end pr-5 align-items-center"
+          >
+            <h6>Number of Jobs Per Page</h6>
+            <select className="mx-2" name="" id="">
+              <option value="2">2</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </Col>
+        </Row>
+        <table className="table table-bordered  table-hover table-sm" style={{ width: "100%",overflow: "auto" }}>
+          <thead className="active-job-unprocessed-table-thead mt-3 py-2">
+            <tr>
+              <th className="">O</th>
+              <th className="">#</th>
+              <th className="">Name</th>
+              <th className="">Resume</th>
+              <th className="">Nationality</th>
+              <th className="">Date Applied</th>
+              <th className="">Action</th>
+              <th className=""></th>
+            </tr>
+          </thead>
+          <tbody>
+            {unprocessedJobs.map((job, i) => {
+              return (
+                <tr key={i} onClick={job => jobClickHandler(job)}>
+                  <td className=" ">
+                    <input type="radio" />
+                  </td>
+                  <td className=" ">{job.id}</td>
+                  <td className=""> {job.name}</td>
+                  <td className=" ">
+                    <i className="fa fa-eye"></i>
+                    {`  ${job.resume}`}
+                  </td>
+                  <td className=" ">{job.nationality}</td>
+                  <td className=" ">{job.dateApplied}</td>
+                  <td className=" ">{job.action}</td>
+                  <td className=" ">{job.status}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </Container>
   );

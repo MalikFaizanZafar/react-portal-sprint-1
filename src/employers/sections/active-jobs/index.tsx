@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabsNavigator from "../../tabs-navigator";
+import TabsNavigator from "../../components/tabs-navigator";
 import ActiveJobsSubSection from "./active-jobs-subsection";
 import InActiveJobsSubSection from "./in-active-jobs-subsection";
 import SelectedJobPreview from "./selected-job-preview";

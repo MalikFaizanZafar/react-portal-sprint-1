@@ -36,7 +36,7 @@ const ReportsInActiveJobs: FunctionComponent<ReportsInActiveJobsProps> = ({jobSe
   return (
     <Container className="p-0">
       {children}
-      <Row className="px-5">
+      <div className="" style={{ width: '100%',overflow: 'auto'}}>
         <Col md="12" xs="12" sm="12">
           <Table hover className="mt-5 active-job-unprocessed-table">
             <thead className="active-job-unprocessed-table-thead bg-primary text-white mt-3 py-2">
@@ -63,7 +63,7 @@ const ReportsInActiveJobs: FunctionComponent<ReportsInActiveJobsProps> = ({jobSe
             </tbody>
           </Table>
         </Col>
-      </Row>
+      </div>
     </Container>
   );
 };

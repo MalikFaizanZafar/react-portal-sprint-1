@@ -39,26 +39,26 @@ const CurrentProducts: FunctionComponent<CurrentProductsProps> = ({ productSelec
            style={{width:'100%'}} >
             <thead className="bg-primary text-white mt-3 py-2">
               <tr>
-                <th className="py-4">Contact</th>
-                <th className="py-4">Product</th>
-                <th className="py-4">Activation Date</th>
-                <th className="py-4">Expiry Date</th>
-                <th className="py-4">Purchased</th>
-                <th className="py-4">Used</th>
-                <th className="py-4">Available</th>
+                <th className="">Contact</th>
+                <th className="">Product</th>
+                <th className="">Activation Date</th>
+                <th className="">Expiry Date</th>
+                <th className="">Purchased</th>
+                <th className="">Used</th>
+                <th className="">Available</th>
               </tr>
             </thead>
             <tbody>
               {currentProducts.map((prod, i) => {
                 return (
                   <tr key={i} onClick={(prod) => productClickHandler(prod)}>
-                    <td className="py-4 ">{prod.contact}</td>
-                    <td className="py-4"> {prod.product}</td>
-                    <td className="py-4 ">{prod.activationDate}</td>
-                    <td className="py-4 ">{prod.expiryDate}</td>
-                    <td className="py-4 ">{prod.purchased}</td>
-                    <td className="py-4 ">{prod.used}</td>
-                    <td className="py-4 ">{prod.available}</td>
+                    <td className=" ">{prod.contact}</td>
+                    <td className=""> {prod.product}</td>
+                    <td className=" ">{prod.activationDate}</td>
+                    <td className=" ">{prod.expiryDate}</td>
+                    <td className=" ">{prod.purchased}</td>
+                    <td className=" ">{prod.used}</td>
+                    <td className=" ">{prod.available}</td>
                   </tr>
                 );
               })}
