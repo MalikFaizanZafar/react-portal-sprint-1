@@ -35,7 +35,7 @@ const ExpiredProducts: FunctionComponent<ExpiredProductsProps> = ({ productSelec
     <Container className="p-0">
       {children}
       <div className="" style={{ width: '100%',overflow: 'auto'}}>
-        <Col md="12" xs="12" sm="12">
+        <Col>
           <Table hover className="mt-5 active-job-unprocessed-table">
             <thead className="bg-primary text-white mt-3 py-2">
               <tr>

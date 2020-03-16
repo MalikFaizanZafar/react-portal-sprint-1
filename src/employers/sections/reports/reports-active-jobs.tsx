@@ -43,7 +43,7 @@ const ReportsActiveJobs: FunctionComponent<ReportsActiveJobsProps> = ({jobSelect
   return (
     <Container className="p-0">
       {children}
-      <Row className="">
+      <div className="" style={{ width: "100%", overflow: "auto" }}>
         <Col md="12" xs="12" sm="12">
           <Table hover className="mt-5 active-job-unprocessed-table">
             <thead className="active-job-unprocessed-table-thead bg-primary text-white mt-3 py-2">
@@ -70,7 +70,7 @@ const ReportsActiveJobs: FunctionComponent<ReportsActiveJobsProps> = ({jobSelect
             </tbody>
           </Table>
         </Col>
-      </Row>
+      </div>
     </Container>
   );
 };

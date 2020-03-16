@@ -35,7 +35,7 @@ const CurrentProducts: FunctionComponent<CurrentProductsProps> = ({ productSelec
     <Container className="p-0">
       {children}
       <div className="" style={{ width: '100%',overflow: 'auto'}}>
-           <table className="table table-striped table-bordered table-sm"
+           <table className="mt-5 table table-striped table-bordered table-sm"
            style={{width:'100%'}} >
             <thead className="bg-primary text-white mt-3 py-2">
               <tr>
