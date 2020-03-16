@@ -48,22 +48,22 @@ const ReportsActiveJobs: FunctionComponent<ReportsActiveJobsProps> = ({jobSelect
           <Table hover className="mt-5 active-job-unprocessed-table">
             <thead className="active-job-unprocessed-table-thead bg-primary text-white mt-3 py-2">
               <tr>
-                <th className="py-4">Title</th>
-                <th className="py-4">Posted Date</th>
-                <th className="py-4">Expiry Date</th>
-                <th className="py-4">Views</th>
-                <th className="py-4">Applications</th>
+                <th className="">Title</th>
+                <th className="">Posted Date</th>
+                <th className="">Expiry Date</th>
+                <th className="">Views</th>
+                <th className="">Applications</th>
               </tr>
             </thead>
             <tbody>
               {unprocessedJobs.map((job, i) => {
                 return (
                   <tr key={i} onClick={(job) => jobClickHandler(job)}>
-                    <td className="py-4 ">{job.title}</td>
-                    <td className="py-4"> {job.postedDate}</td>
-                    <td className="py-4 ">{job.expiryDate}</td>
-                    <td className="py-4 ">{job.views}</td>
-                    <td className="py-4 ">{job.applications}</td>
+                    <td className=" ">{job.title}</td>
+                    <td className=""> {job.postedDate}</td>
+                    <td className=" ">{job.expiryDate}</td>
+                    <td className=" ">{job.views}</td>
+                    <td className=" ">{job.applications}</td>
                   </tr>
                 );
               })}
