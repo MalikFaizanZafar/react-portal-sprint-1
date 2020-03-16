@@ -34,9 +34,9 @@ const CurrentProducts: FunctionComponent<CurrentProductsProps> = ({ productSelec
   return (
     <Container className="p-0">
       {children}
-      <Row className="px-5">
-        <Col md="12" xs="12" sm="12">
-          <Table hover className="mt-5 active-job-unprocessed-table">
+      <div className="" style={{ width: '100%',overflow: 'auto'}}>
+           <table className="table table-striped table-bordered table-sm"
+           style={{width:'100%'}} >
             <thead className="bg-primary text-white mt-3 py-2">
               <tr>
                 <th className="py-4">Contact</th>
@@ -63,9 +63,8 @@ const CurrentProducts: FunctionComponent<CurrentProductsProps> = ({ productSelec
                 );
               })}
             </tbody>
-          </Table>
-        </Col>
-      </Row>
+          </table>
+      </div>
     </Container>
   );
 };

@@ -61,7 +61,7 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({job
     <Container className="p-0">
       {children}
       <div className="" style={{ width: '100%',overflow: 'auto'}}>
-           <table id="dtHorizontalExample" className="table table-striped table-bordered table-sm"
+           <table className="table table-striped table-bordered table-sm"
            style={{width:'100%'}} >
             <thead>
               <tr>
