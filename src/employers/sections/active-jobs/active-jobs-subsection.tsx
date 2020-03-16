@@ -1,11 +1,14 @@
 import React, { FunctionComponent, useState } from "react";
-import { Container, Table, Row, Col } from "reactstrap";
+import { Container, Table, Row, Col, InputGroup,Input, InputGroupAddon,InputGroupText  } from "reactstrap";
 import "../../employers.styles.css";
 type ActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
-  jobSelect: (id : number) => void
+  jobSelect: (id: number) => void;
 };
-const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({jobSelect, children }) => {
+const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
+  jobSelect,
+  children
+}) => {
   const [unprocessedJobs] = useState([
     {
       id: 1,
@@ -55,49 +58,65 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({job
   ]);
 
   const jobClickHandler = (job: any) => {
-    jobSelect(job.id)
-  }
+    jobSelect(job.id);
+  };
   return (
     <Container className="p-0">
       {children}
-     <div className="" style={{width: '100%', overflow: 'auto'}}>
-     <table className="table table-hover table-sm" style={{width: '100%'}}>
-            <thead className="active-job-unprocessed-table-thead mt-3 py-2">
-              <tr>
-                <th className="py-4">O</th>
-                <th className="py-4">#</th>
-                <th className="py-4">Name</th>
-                <th className="py-4">Resume</th>
-                <th className="py-4">Nationality</th>
-                <th className="py-4">Date Applied</th>
-                <th className="py-4">Action</th>
-                <th className="py-4"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {unprocessedJobs.map((job, i) => {
-                return (
-                  <tr key={i} onClick={(job) => jobClickHandler(job)}>
-                    <td className="py-4 ">
-                      <input type="radio"/>
-                    </td>
-                    <td className="py-4 ">{job.id}</td>
-                    <td className="py-4"> {job.name}</td>
-                    <td className="py-4 ">
-                      <i className="fa fa-eye"></i>
-                      {`  ${job.resume}`}
-                    </td>
-                    <td className="py-4 ">{job.nationality}</td>
-                    <td className="py-4 ">{job.dateApplied}</td>
-                    <td className="py-4 ">{job.action}</td>
-                    <td className="py-4 ">{job.status}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-
-     </div>
+      <div className="" style={{ width: "100%", overflow: "auto" }}>
+        <Row className="p-2 mt-5">
+          <Col md="7" sm="6" xs="12" className="align-items-center">
+            <InputGroup className="p-1">
+              <Input placeholder="Jobs, Departments etc" />
+              <InputGroupAddon addonType="append">
+                <InputGroupText style={{width: '100px', height: '38px'}} className="bg-primary text-white pl-4">
+                  Search
+                </InputGroupText>
+              </InputGroupAddon>
+            </InputGroup>
+          </Col>
+          <Col md="5" sm="6" xs="12">
+            <p className="font-weight-bold text-secondary">
+              Enter Keywords such as Job Title or Department/Function to find Specific Job Postings
+            </p>
+          </Col>
+        </Row>
+        <table className="table table-hover table-sm" style={{ width: "100%" }}>
+          <thead className="active-job-unprocessed-table-thead mt-3 py-2">
+            <tr>
+              <th className="py-4">O</th>
+              <th className="py-4">#</th>
+              <th className="py-4">Name</th>
+              <th className="py-4">Resume</th>
+              <th className="py-4">Nationality</th>
+              <th className="py-4">Date Applied</th>
+              <th className="py-4">Action</th>
+              <th className="py-4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {unprocessedJobs.map((job, i) => {
+              return (
+                <tr key={i} onClick={job => jobClickHandler(job)}>
+                  <td className="py-4 ">
+                    <input type="radio" />
+                  </td>
+                  <td className="py-4 ">{job.id}</td>
+                  <td className="py-4"> {job.name}</td>
+                  <td className="py-4 ">
+                    <i className="fa fa-eye"></i>
+                    {`  ${job.resume}`}
+                  </td>
+                  <td className="py-4 ">{job.nationality}</td>
+                  <td className="py-4 ">{job.dateApplied}</td>
+                  <td className="py-4 ">{job.action}</td>
+                  <td className="py-4 ">{job.status}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </Container>
   );
 };
