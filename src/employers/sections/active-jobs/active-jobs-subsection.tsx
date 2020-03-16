@@ -65,7 +65,6 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
       status: "Rejected"
     }
   ]);
-  const [showAlert, toggleAlert] = useState(true);
   const jobClickHandler = (job: any) => {
     jobSelect(job.id);
   };
