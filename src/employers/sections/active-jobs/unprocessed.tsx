@@ -56,7 +56,7 @@ const UnProcessed: FunctionComponent<UnProcessedProps> = ({ children }) => {
     <Container className="p-0">
       {children}
       <div className="" style={{ width: "100%", overflow: "auto" }}>
-        <Row className="mt-5 mb-2 px-3">
+        <Row className="mt-5 mb-2 px-2">
           <Col md="6" sm="6" xs="12">
             <h6 className="font-weight-bold">Track Applications :</h6>
           </Col>

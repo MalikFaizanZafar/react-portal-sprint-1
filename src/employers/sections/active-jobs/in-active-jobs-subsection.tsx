@@ -57,7 +57,7 @@ const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = (
   return (
     <Container className="p-0">
       {children}
-      <div className="" style={{ width: "100%", overflow: "auto" }}>
+      <div className="">
         <Row className="p-2 mt-5">
           <Col md="7" sm="6" xs="12" className="align-items-center">
             <InputGroup className="p-1">
@@ -98,6 +98,7 @@ const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = (
             </select>
           </Col>
         </Row>
+        <div style={{ width: "100%", overflow: "auto" }}>
         <Table hover className="mt-5 active-job-unprocessed-table" style={{ width: "100%", overflow: "auto" }}>
           <thead className="active-job-unprocessed-table-thead mt-3 py-2">
             <tr>
@@ -133,6 +134,7 @@ const InActiveJobsSubSection: FunctionComponent<InActiveJobsSubSectionProps> = (
             })}
           </tbody>
         </Table>
+        </div>
       </div>
     </Container>
   );

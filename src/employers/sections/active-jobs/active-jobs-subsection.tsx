@@ -71,7 +71,7 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
   return (
     <Container className="p-0">
       {children}
-      <div className="" style={{ width: "100%", overflow: "auto" }}>
+      <div className="">
         <Row className="p-2 mt-5">
           <Col md="7" sm="6" xs="12" className="align-items-center">
             <InputGroup className="p-1">
@@ -112,41 +112,43 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
             </select>
           </Col>
         </Row>
-        <table className="table table-bordered  table-hover table-sm" style={{ width: "100%",overflow: "auto" }}>
-          <thead className="active-job-unprocessed-table-thead mt-3 py-2">
-            <tr>
-              <th className="">O</th>
-              <th className="">#</th>
-              <th className="">Name</th>
-              <th className="">Resume</th>
-              <th className="">Nationality</th>
-              <th className="">Date Applied</th>
-              <th className="">Action</th>
-              <th className=""></th>
-            </tr>
-          </thead>
-          <tbody>
-            {unprocessedJobs.map((job, i) => {
-              return (
-                <tr key={i} onClick={job => jobClickHandler(job)}>
-                  <td className=" ">
-                    <input type="radio" />
-                  </td>
-                  <td className=" ">{job.id}</td>
-                  <td className=""> {job.name}</td>
-                  <td className=" ">
-                    <i className="fa fa-eye"></i>
-                    {`  ${job.resume}`}
-                  </td>
-                  <td className=" ">{job.nationality}</td>
-                  <td className=" ">{job.dateApplied}</td>
-                  <td className=" ">{job.action}</td>
-                  <td className=" ">{job.status}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div style={{ width: "100%", overflow: "auto" }}>
+          <table className="table table-bordered  table-hover table-sm" style={{ width: "100%",overflow: "auto" }}>
+            <thead className="active-job-unprocessed-table-thead mt-3 py-2">
+              <tr>
+                <th className="">O</th>
+                <th className="">#</th>
+                <th className="">Name</th>
+                <th className="">Resume</th>
+                <th className="">Nationality</th>
+                <th className="">Date Applied</th>
+                <th className="">Action</th>
+                <th className=""></th>
+              </tr>
+            </thead>
+            <tbody>
+              {unprocessedJobs.map((job, i) => {
+                return (
+                  <tr key={i} onClick={job => jobClickHandler(job)}>
+                    <td className=" ">
+                      <input type="radio" />
+                    </td>
+                    <td className=" ">{job.id}</td>
+                    <td className=""> {job.name}</td>
+                    <td className=" ">
+                      <i className="fa fa-eye"></i>
+                      {`  ${job.resume}`}
+                    </td>
+                    <td className=" ">{job.nationality}</td>
+                    <td className=" ">{job.dateApplied}</td>
+                    <td className=" ">{job.action}</td>
+                    <td className=" ">{job.status}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>  
+        </div>
       </div>
     </Container>
   );
