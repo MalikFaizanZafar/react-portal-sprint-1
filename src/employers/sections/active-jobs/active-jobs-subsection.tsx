@@ -1,5 +1,14 @@
 import React, { FunctionComponent, useState } from "react";
-import { Container, Table, Row, Col, InputGroup,Input, InputGroupAddon,InputGroupText  } from "reactstrap";
+import {
+  Container,
+  Alert,
+  Row,
+  Col,
+  InputGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText
+} from "reactstrap";
 import "../../employers.styles.css";
 type ActiveJobsSubSectionProps = {
   // tabs: new (props: any) => React.Component
@@ -56,7 +65,7 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
       status: "Rejected"
     }
   ]);
-
+  const [showAlert, toggleAlert] = useState(true);
   const jobClickHandler = (job: any) => {
     jobSelect(job.id);
   };
@@ -69,7 +78,10 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
             <InputGroup className="p-1">
               <Input placeholder="Jobs, Departments etc" />
               <InputGroupAddon addonType="append">
-                <InputGroupText style={{width: '100px', height: '38px'}} className="bg-primary text-white pl-4">
+                <InputGroupText
+                  style={{ width: "100px", height: "38px" }}
+                  className="bg-primary text-white pl-4"
+                >
                   Search
                 </InputGroupText>
               </InputGroupAddon>
@@ -77,8 +89,28 @@ const ActiveJobsSubSection: FunctionComponent<ActiveJobsSubSectionProps> = ({
           </Col>
           <Col md="5" sm="6" xs="12">
             <p className="font-weight-bold text-secondary">
-              Enter Keywords such as Job Title or Department/Function to find Specific Job Postings
+              Enter Keywords such as Job Title or Department/Function to find
+              Specific Job Postings
             </p>
+          </Col>
+        </Row>
+        <Row className="my-2 px-3">
+          <Col md="6" sm="6" xs="12">
+            <h6 className="font-weight-bold">No of Jobs Posted (40/80)</h6>
+          </Col>
+          <Col
+            md="6"
+            sm="6"
+            xs="12"
+            className="d-flex justify-content-end pr-5 align-items-center"
+          >
+            <h6>Number of Jobs Per Page</h6>
+            <select className="mx-2" name="" id="">
+              <option value="2">2</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
           </Col>
         </Row>
         <table className="table table-hover table-sm" style={{ width: "100%" }}>
