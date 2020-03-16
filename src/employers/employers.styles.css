@@ -131,6 +131,9 @@
         padding: 12px 70px;
         font-size: 15px;
     }
+    .job-form {
+        padding: 40px 60px;
+    }
 }
 @media screen and (max-width: 991px) {
     .emplye-header span {
@@ -144,6 +147,9 @@
     .field-marked {
         position: absolute;
         top: -47px;
+    }
+    .job-form {
+        padding: 35px 30px;
     }
     
 }
@@ -159,5 +165,8 @@
     }
     .table td, .table th {
         font-size: 12px;
+    }
+    .job-form {
+        padding: 25px 20px;
     }
 }

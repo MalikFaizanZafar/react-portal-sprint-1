@@ -60,33 +60,33 @@ const ShortListed: FunctionComponent<ShortListedProps> = ({ children }) => {
         <Table hover className="mt-1 active-job-unprocessed-table">
           <thead className="active-job-unprocessed-table-thead mt-3 py-2">
             <tr>
-              <th className="py-4">O</th>
-              <th className="py-4">#</th>
-              <th className="py-4">Name</th>
-              <th className="py-4">Resume</th>
-              <th className="py-4">Nationality</th>
-              <th className="py-4">Date Applied</th>
-              <th className="py-4">Action</th>
-              <th className="py-4"></th>
+              <th className="">O</th>
+              <th className="">#</th>
+              <th className="">Name</th>
+              <th className="">Resume</th>
+              <th className="">Nationality</th>
+              <th className="">Date Applied</th>
+              <th className="">Action</th>
+              <th className=""></th>
             </tr>
           </thead>
           <tbody>
             {unprocessedJobs.map((job, i) => {
               return (
                 <tr key={i}>
-                  <td className="py-4 ">
+                  <td className=" ">
                     <input type="radio" />
                   </td>
-                  <td className="py-4 ">{job.id}</td>
-                  <td className="py-4"> {job.name}</td>
-                  <td className="py-4 ">
+                  <td className=" ">{job.id}</td>
+                  <td className=""> {job.name}</td>
+                  <td className=" ">
                     <i className="fa fa-eye"></i>
                     {`  ${job.resume}`}
                   </td>
-                  <td className="py-4 ">{job.nationality}</td>
-                  <td className="py-4 ">{job.dateApplied}</td>
-                  <td className="py-4 ">{job.action}</td>
-                  <td className="py-4 ">{job.status}</td>
+                  <td className=" ">{job.nationality}</td>
+                  <td className=" ">{job.dateApplied}</td>
+                  <td className=" ">{job.action}</td>
+                  <td className=" ">{job.status}</td>
                 </tr>
               );
             })}
