@@ -15,8 +15,13 @@ const SubUsers = () => {
     }
     return(
         <React.Fragment>
+              
         <div className="container p-0">
+        <span>
+                    You can share this account with up to 5 sub-users
+                </span>
             <div className="post-jobs-inner-div">
+            
                 {selectedTab === 0 &&
                     <ExistingSubUsers>
                         <TabsNavigator
@@ -35,12 +40,7 @@ const SubUsers = () => {
                     </CreateNewSubUser>}
                
             </div>
-  <Row className="mt-5 mb-3">
-      <Col md={{size:11 }} sm='11' className="text-right">
-          <Button className="button-no-bg">CANCEL</Button>
-          <Button className="button-gradient">SAVE & PREVIEW</Button>
-      </Col>
-  </Row>
+
     
     
             {/* {selectedTab === 1 && <JobLocation />}
