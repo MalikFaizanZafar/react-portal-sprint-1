@@ -19,15 +19,15 @@ const headerClickHandler = (index:number,value:string)=>{
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
   return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+    <Dropdown isOpen={dropdownOpen} toggle={toggle} style={{paddingTop:'50px'}}>
       <DropdownToggle caret>
         {dropDownToggle}
           </DropdownToggle>
-      <DropdownMenu>
+      <DropdownMenu  >
         {
           headers.map((head, i) => {
             return (
-              <DropdownItem key={i} onClick={(event) => headerClickHandler(i,head)} style={{cursor: "pointer"}} className={selectedMainTab !== i ? `text-white`: 'bg-light text-primary'} >{head}</DropdownItem>
+              <DropdownItem key={i} onClick={(event) => headerClickHandler(i,head)} style={{cursor: "pointer"}} className={selectedMainTab !== i ? `text-white `: 'bg-light text-primary'} >{head}</DropdownItem>
             )
           })
         }

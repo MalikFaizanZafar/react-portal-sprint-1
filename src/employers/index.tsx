@@ -23,7 +23,7 @@ const employersHeaders = [
 
 const Employer = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
+    React.useEffect(() => getChange())
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const [hideHeader, setHeader] = useState(false);
 
